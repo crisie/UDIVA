@@ -117,6 +117,17 @@ def parse_body_at(path_to_hdf5, num_frame, all=False):
 
     return confidence, landmarks, valid
 
+def is_valid(path_to_hdf5, num_frame):
+    """
+    :param path_to_hdf5: path to annotations 'hdf5' file
+    :param num_frame: frame to extract annotations from
+
+    :return: boolean indicating if the frame is valid
+    """
+    assert os.path.exists(path_to_hdf5) or path_to_hdf5.split(".")[-1].lower() != "hdf5", "HDF5 file could not be opened."
+    with h5py.File(path_to_hdf5, "r") as f:
+        return f[f"{num_frame:05d}"].attrs["valid"]
+
 def is_lhand_visible(path_to_hdf5, num_frame):
     """
     :param path_to_hdf5: path to annotations 'hdf5' file

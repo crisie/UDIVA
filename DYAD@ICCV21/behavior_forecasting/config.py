@@ -2,8 +2,8 @@
 
 
 # Generic information
-ANNOTATIONS_FILE = "annotations_post_4pd.hdf5"
-AVAILABLE_TASKS = ["FC1_T", "FC2_T"]
+ANNOTATIONS_FILE = "annotations_raw.hdf5"
+AVAILABLE_TASKS = ["FC1_T", "FC2_T", "FC1_A", "FC2_A", "FC1_G", "FC2_G", "FC1_L", "FC2_L"]
 
 # Others
 TO_PREDICT_FILENAME = "clips.csv"
