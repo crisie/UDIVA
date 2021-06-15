@@ -6,7 +6,6 @@ ANNOTATIONS_FILE = "annotations_raw.hdf5"
 AVAILABLE_TASKS = ["FC1_T", "FC2_T", "FC1_A", "FC2_A", "FC1_G", "FC2_G", "FC1_L", "FC2_L"]
 
 # Others
-TO_PREDICT_FILENAME = "clips.csv"
 DISTANCES_FILENAME = "distances.csv"
 GT_FILENAME = "ground_truth.json"
 PRED_FILENAME = "predictions.json"

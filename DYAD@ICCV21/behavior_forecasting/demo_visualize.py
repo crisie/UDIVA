@@ -9,7 +9,7 @@ from tqdm import tqdm
 import sys
 sys.path.append("./lib")
 from config import *
-from annotations_parser import is_valid, parse_face_at, parse_lhand_at, parse_rhand_at, parse_body_at, parse_gaze_at, is_lhand_visible, is_rhand_visible
+from annotations_parser import is_valid, is_to_predict, parse_face_at, parse_lhand_at, parse_rhand_at, parse_body_at, parse_gaze_at, is_lhand_visible, is_rhand_visible
 from visualization import *
 
 def get_arguments():
@@ -42,7 +42,9 @@ if __name__ == '__main__':
             frame = np.zeros_like(frame)
         
         # If frame is valid, we print landmarks
-        if is_valid(annotations_path, i):
+        valid = is_valid(annotations_path, i)
+        to_predict = is_to_predict(annotations_path, i)
+        if valid and not to_predict:
             # We parse the face landmarks and show it. Note: 'valid' is only annotated for the validation and test sets
             landmarks, valid = parse_face_at(annotations_path, i)[1:]
             if valid:
@@ -72,9 +74,9 @@ if __name__ == '__main__':
             landmarks, valid = parse_body_at(annotations_path, i)[1:]
             if valid:
                 frame = draw_body(frame, landmarks, valid, right_visible=right_visible, left_visible=left_visible)
-        else:
+        else: # not valid or to predict
             frame = np.zeros_like(frame)
-                
+                 
         # We draw a frame counter on top-left of the frames.
         cv2.putText(frame,f'{i:06d}', (60,60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2)
         writer.append_data(frame)

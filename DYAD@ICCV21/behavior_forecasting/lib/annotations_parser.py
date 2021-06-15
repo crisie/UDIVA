@@ -36,6 +36,8 @@ def parse_face_at(path_to_hdf5, num_frame, all=False):
     assert os.path.exists(path_to_hdf5) or path_to_hdf5.split(".")[-1].lower() != "hdf5", "HDF5 file could not be opened."
     with h5py.File(path_to_hdf5, "r") as f:
         key_frame = f"{num_frame:05d}"
+        if "face" not in f[key_frame]:
+            return 0, [], False
         # -------- FACE --------
         confidence = f[key_frame]["face"].attrs["confidence"] if "confidence" in f[key_frame]["face"].attrs.keys() else 0
         valid = f[key_frame]["face"].attrs["valid"] if "valid" in f[key_frame]["face"].attrs.keys() else False
@@ -59,6 +61,8 @@ def parse_lhand_at(path_to_hdf5, num_frame, all=False):
     assert os.path.exists(path_to_hdf5) or path_to_hdf5.split(".")[-1].lower() != "hdf5", "HDF5 file could not be opened."
     with h5py.File(path_to_hdf5, "r") as f:
         key_frame = f"{num_frame:05d}"
+        if "hands" not in f[key_frame] or "left" not in f[key_frame]["hands"] or "right" not in f[key_frame]["hands"]:
+            return 0, [], False
         # -------- LEFT HAND --------
         confidence = f[key_frame]["hands"]["left"].attrs["confidence"] if "confidence" in f[key_frame]["hands"]["left"].attrs.keys() else 0
         valid = f[key_frame]["hands"]["left"].attrs["valid"] if "valid" in f[key_frame]["hands"]["left"].attrs.keys() else False
@@ -82,6 +86,8 @@ def parse_rhand_at(path_to_hdf5, num_frame, all=False):
     assert os.path.exists(path_to_hdf5) or path_to_hdf5.split(".")[-1].lower() != "hdf5", "HDF5 file could not be opened."
     with h5py.File(path_to_hdf5, "r") as f:
         key_frame = f"{num_frame:05d}"
+        if "hands" not in f[key_frame] or "left" not in f[key_frame]["hands"] or "right" not in f[key_frame]["hands"]:
+            return 0, [], False
         # -------- RIGHT HAND --------
         confidence = f[key_frame]["hands"]["right"].attrs["confidence"] if "confidence" in f[key_frame]["hands"]["right"].attrs.keys() else 0
         valid = f[key_frame]["hands"]["right"].attrs["valid"] if "valid" in f[key_frame]["hands"]["right"].attrs.keys() else False
@@ -105,6 +111,8 @@ def parse_body_at(path_to_hdf5, num_frame, all=False):
     assert os.path.exists(path_to_hdf5) or path_to_hdf5.split(".")[-1].lower() != "hdf5", "HDF5 file could not be opened."
     with h5py.File(path_to_hdf5, "r") as f:
         key_frame = f"{num_frame:05d}"
+        if "body" not in f[key_frame]:
+            return 0, [], False
         # -------- BODY --------
         confidence = f[key_frame]["body"].attrs["confidence"] if "confidence" in f[key_frame]["body"].attrs.keys() else 0
         valid = f[key_frame]["body"].attrs["valid"] if "valid" in f[key_frame]["body"].attrs.keys() else False
@@ -127,6 +135,18 @@ def is_valid(path_to_hdf5, num_frame):
     assert os.path.exists(path_to_hdf5) or path_to_hdf5.split(".")[-1].lower() != "hdf5", "HDF5 file could not be opened."
     with h5py.File(path_to_hdf5, "r") as f:
         return f[f"{num_frame:05d}"].attrs["valid"]
+
+def is_to_predict(path_to_hdf5, num_frame):
+    """
+    :param path_to_hdf5: path to annotations 'hdf5' file
+    :param num_frame: frame to extract annotations from
+
+    :return: boolean indicating if the frame has to be predicted
+    """
+    assert os.path.exists(path_to_hdf5) or path_to_hdf5.split(".")[-1].lower() != "hdf5", "HDF5 file could not be opened."
+    with h5py.File(path_to_hdf5, "r") as f:
+        key_frame = f"{num_frame:05d}"
+        return "body" not in f[key_frame] and "face" not in f[key_frame] and "hands" not in f[key_frame]
 
 def is_lhand_visible(path_to_hdf5, num_frame):
     """
@@ -160,5 +180,7 @@ def parse_gaze_at(path_to_hdf5, num_frame):
     assert os.path.exists(path_to_hdf5) or path_to_hdf5.split(".")[-1].lower() != "hdf5", "HDF5 file could not be opened."
     with h5py.File(path_to_hdf5, "r") as f:
         key_frame = f"{num_frame:05d}"
+        if "face" not in f[key_frame]:
+            return None
         # -------- FACE --------
         return f[key_frame]["face"].attrs["gaze"] if "gaze" in f[key_frame]["face"].attrs.keys() else None
