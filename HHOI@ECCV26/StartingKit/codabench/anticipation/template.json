@@ -1,0 +1,46 @@
+{
+  "anticipation": {
+    "001080": {
+      "s_0001": {
+        "t_b": 10.216,
+        "t_e": 12.216,
+        "participants": {
+          "participant_a": {
+            "hypotheses": [
+              {
+                "events": []
+              }
+            ]
+          },
+          "participant_b": {
+            "hypotheses": [
+              {
+                "events": []
+              }
+            ]
+          }
+        }
+      },
+      "s_0002": {
+        "t_b": 17.335,
+        "t_e": 19.335,
+        "participants": {
+          "participant_a": {
+            "hypotheses": [
+              {
+                "events": []
+              }
+            ]
+          },
+          "participant_b": {
+            "hypotheses": [
+              {
+                "events": []
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

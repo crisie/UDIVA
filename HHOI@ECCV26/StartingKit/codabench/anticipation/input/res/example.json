@@ -1,0 +1,60 @@
+{
+  "anticipation": {
+    "001080": {
+      "s_0001": {
+        "t_b": 10.216,
+        "t_e": 12.216,
+        "participants": {
+          "participant_a": {
+            "hypotheses": [
+              {
+                "events": [
+                  ["suggest", "brick_3001"],
+                  ["select", "pick_up", "brick_3001"]
+                ]
+              },
+              {
+                "events": [
+                  ["select", "pick_up", "brick_3001"],
+                  ["suggest", "brick_3001"]
+                ]
+              }
+            ]
+          },
+          "participant_b": {
+            "hypotheses": [
+              {
+                "events": [
+                  ["request", "brick_3001"],
+                  ["give", "pick_up", "brick_3001"]
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "s_0002": {
+        "t_b": 17.335,
+        "t_e": 19.335,
+        "participants": {
+          "participant_a": {
+            "hypotheses": [
+              {
+                "events": [
+                  ["assemble", "place", "partial_model"]
+                ]
+              }
+            ]
+          },
+          "participant_b": {
+            "hypotheses": [
+              {
+                "events": []
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
