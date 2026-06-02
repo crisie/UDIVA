@@ -1,0 +1,4322 @@
+{
+  "verbal": {
+    "001080": {
+      "s_0001": {
+        "t_b": 0.0,
+        "t_e": 2.0,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "suggest",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0002": {
+        "t_b": 3.191,
+        "t_e": 5.191,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "resolve_conflict",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "agree",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0003": {
+        "t_b": 10.216,
+        "t_e": 12.216,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "confirm_selection",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "praise",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "doubt",
+            "target": "brick_3795",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0004": {
+        "t_b": 17.335,
+        "t_e": 19.335,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "declare_step",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "suggest",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0005": {
+        "t_b": 27.935,
+        "t_e": 29.935,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_other",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0006": {
+        "t_b": 30.961,
+        "t_e": 32.961,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "doubt",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_other",
+            "target": "leaflet",
+            "modifier": "incomplete",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "resolve_conflict",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "declare_step",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0007": {
+        "t_b": 35.194,
+        "t_e": 37.194,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "other_acknowledgement",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "express_other",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "declare_step",
+            "target": "brick_3660",
+            "modifier": "incorrectly",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "declare_selection",
+            "target": "brick_3023",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "declare_step",
+            "target": "brick_3660",
+            "modifier": "attempt_to",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0008": {
+        "t_b": 43.204,
+        "t_e": 45.204,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "positive_acknowledgement",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "instruct",
+            "target": "brick_3023",
+            "modifier": "incorrectly",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0009": {
+        "t_b": 50.77,
+        "t_e": 52.77,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "declare_step",
+            "target": "brick_3660",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0010": {
+        "t_b": 60.603,
+        "t_e": 62.603,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_other",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0011": {
+        "t_b": 68.082,
+        "t_e": 70.082,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "explain",
+            "target": "brick_3660",
+            "modifier": "incomplete",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "positive_acknowledgement",
+            "target": "brick_3660",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_observation",
+            "target": "brick_3660",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0012": {
+        "t_b": 77.387,
+        "t_e": 79.387,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "draw_attention",
+            "target": "brick_3298",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "declare_selection",
+            "target": "brick_3298",
+            "modifier": "incorrectly",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "reject_selection",
+            "target": "brick_3298",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0013": {
+        "t_b": 87.068,
+        "t_e": 89.068,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "express_other",
+            "target": "brick_3660",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "check_progress",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0014": {
+        "t_b": 96.578,
+        "t_e": 98.578,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "declare_selection",
+            "target": "brick_60032",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "confirm_selection",
+            "target": "brick_60032",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "declare_selection",
+            "target": "brick_60032",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0015": {
+        "t_b": 104.444,
+        "t_e": 106.444,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "doubt",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0016": {
+        "t_b": 108.843,
+        "t_e": 110.843,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "clarify",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "express_other",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0017": {
+        "t_b": 116.985,
+        "t_e": 118.985,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_other",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "declare_step",
+            "target": "leaflet",
+            "modifier": "incomplete",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0018": {
+        "t_b": 120.092,
+        "t_e": 122.092,
+        "events": []
+      },
+      "s_0019": {
+        "t_b": 130.26,
+        "t_e": 132.26,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_other",
+            "target": "brick_59900",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "declare_step",
+            "target": "brick_59900",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0020": {
+        "t_b": 136.756,
+        "t_e": 138.756,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "confirm_selection",
+            "target": "brick_59900",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "doubt",
+            "target": "brick_59900",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0021": {
+        "t_b": 146.904,
+        "t_e": 148.904,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "explain",
+            "target": "brick_92947",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "positive_acknowledgement",
+            "target": "brick_92947",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "discuss",
+            "target": "brick_92947",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0022": {
+        "t_b": 155.756,
+        "t_e": 157.756,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "suggest",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "seek_confirmation",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "agree",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0023": {
+        "t_b": 164.55,
+        "t_e": 166.55,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_other",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0024": {
+        "t_b": 168.652,
+        "t_e": 170.652,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_observation",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "assist",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_other",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0025": {
+        "t_b": 173.167,
+        "t_e": 175.167,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "draw_attention",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "declare_selection",
+            "target": "brick_3298",
+            "modifier": "incorrectly",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "seek_confirmation",
+            "target": "brick_3298",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0026": {
+        "t_b": 184.966,
+        "t_e": 186.966,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "assist",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0027": {
+        "t_b": 196.259,
+        "t_e": 198.259,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "instruct",
+            "target": "brick_2496",
+            "modifier": "attempt_to",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0028": {
+        "t_b": 206.311,
+        "t_e": 208.311,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "doubt",
+            "target": "brick_26716",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0029": {
+        "t_b": 218.307,
+        "t_e": 220.307,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "positive_acknowledgement",
+            "target": "brick_2496",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0030": {
+        "t_b": 225.443,
+        "t_e": 227.443,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "seek_confirmation",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0031": {
+        "t_b": 228.206,
+        "t_e": 230.206,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "check_progress",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "express_other",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0032": {
+        "t_b": 233.61,
+        "t_e": 235.61,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "resolve_conflict",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "agree",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0033": {
+        "t_b": 241.185,
+        "t_e": 243.185,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "other_acknowledgement",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "other_acknowledgement",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_observation",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      }
+    },
+    "181182": {
+      "s_0001": {
+        "t_b": 0.0,
+        "t_e": 2.0,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "seek_information",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "declare_step",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0002": {
+        "t_b": 3.191,
+        "t_e": 5.191,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "express_observation",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0003": {
+        "t_b": 10.216,
+        "t_e": 12.216,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "declare_step",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0004": {
+        "t_b": 17.335,
+        "t_e": 19.335,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "doubt",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0005": {
+        "t_b": 27.935,
+        "t_e": 29.935,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "doubt",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0006": {
+        "t_b": 30.961,
+        "t_e": 32.961,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "criticize",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "draw_attention",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "seek_confirmation",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0007": {
+        "t_b": 35.194,
+        "t_e": 37.194,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "suggest",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "agree",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "check_progress",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0008": {
+        "t_b": 43.204,
+        "t_e": 45.204,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "clarify",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "clarify",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0009": {
+        "t_b": 50.77,
+        "t_e": 52.77,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "seek_confirmation",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "confirm_selection",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0010": {
+        "t_b": 60.603,
+        "t_e": 62.603,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "declare_step",
+            "target": "unclear",
+            "modifier": "incomplete",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0011": {
+        "t_b": 68.082,
+        "t_e": 70.082,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "positive_acknowledgement",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "clarify",
+            "target": "brick_3003",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0012": {
+        "t_b": 77.387,
+        "t_e": 79.387,
+        "events": []
+      },
+      "s_0013": {
+        "t_b": 87.068,
+        "t_e": 89.068,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "clarify",
+            "target": "brick_3062",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "confirm_selection",
+            "target": "brick_3062",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0014": {
+        "t_b": 96.578,
+        "t_e": 98.578,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "positive_acknowledgement",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "criticize",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0015": {
+        "t_b": 104.444,
+        "t_e": 106.444,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "criticize",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "agree",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "criticize",
+            "target": "main_model",
+            "modifier": "incomplete",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "other_acknowledgement",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0016": {
+        "t_b": 108.843,
+        "t_e": 110.843,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "agree",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "suggest",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "seek_information",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "draw_attention",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "positive_acknowledgement",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0017": {
+        "t_b": 116.985,
+        "t_e": 118.985,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "seek_confirmation",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "confirm_selection",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0018": {
+        "t_b": 120.092,
+        "t_e": 122.092,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "agree",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "discuss",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0019": {
+        "t_b": 130.26,
+        "t_e": 132.26,
+        "events": []
+      },
+      "s_0020": {
+        "t_b": 136.756,
+        "t_e": 138.756,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "express_observation",
+            "target": "brick_3021",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "declare_selection",
+            "target": "brick_3020",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0021": {
+        "t_b": 146.904,
+        "t_e": 148.904,
+        "events": []
+      },
+      "s_0022": {
+        "t_b": 155.756,
+        "t_e": 157.756,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_concern",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "resolve_conflict",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0023": {
+        "t_b": 164.55,
+        "t_e": 166.55,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "clarify",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0024": {
+        "t_b": 168.652,
+        "t_e": 170.652,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "seek_confirmation",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "positive_acknowledgement",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0025": {
+        "t_b": 173.167,
+        "t_e": 175.167,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "positive_acknowledgement",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "instruct",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "express_observation",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0026": {
+        "t_b": 184.966,
+        "t_e": 186.966,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "other_acknowledgement",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0027": {
+        "t_b": 196.259,
+        "t_e": 198.259,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "declare_step",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "explain",
+            "target": "brick_3004",
+            "modifier": "incomplete",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0028": {
+        "t_b": 206.311,
+        "t_e": 208.311,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "seek_confirmation",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "express_concern",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0029": {
+        "t_b": 218.307,
+        "t_e": 220.307,
+        "events": []
+      },
+      "s_0030": {
+        "t_b": 225.443,
+        "t_e": 227.443,
+        "events": []
+      },
+      "s_0031": {
+        "t_b": 228.206,
+        "t_e": 230.206,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "express_concern",
+            "target": "brick_6215",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0032": {
+        "t_b": 233.61,
+        "t_e": 235.61,
+        "events": [
+          {
+            "subject": "participant_a",
+            "utterance_type": "other_acknowledgement",
+            "target": "brick_6215",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0033": {
+        "t_b": 241.185,
+        "t_e": 243.185,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "criticize",
+            "target": "brick_59900",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "declare_selection",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0034": {
+        "t_b": 246.106,
+        "t_e": 248.106,
+        "events": []
+      },
+      "s_0035": {
+        "t_b": 252.681,
+        "t_e": 254.681,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "other_acknowledgement",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0036": {
+        "t_b": 263.445,
+        "t_e": 265.445,
+        "events": [
+          {
+            "subject": "participant_b",
+            "utterance_type": "criticize",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "seek_confirmation",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "utterance_type": "other_acknowledgement",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "utterance_type": "positive_acknowledgement",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "nonverbal": {
+    "001080": {
+      "s_0001": {
+        "t_b": 0.0,
+        "t_e": 2.0,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "open",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0002": {
+        "t_b": 3.191,
+        "t_e": 5.191,
+        "events": []
+      },
+      "s_0003": {
+        "t_b": 10.216,
+        "t_e": 12.216,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3795",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "verify",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "brick_3795",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "brick_3795",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "rotate",
+            "target": "brick_3795",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "brick_3795",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0004": {
+        "t_b": 17.335,
+        "t_e": 19.335,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "keep",
+            "lowlevel_action": "hold",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3004",
+            "modifier": "incorrectly",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "rotate",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "give",
+            "lowlevel_action": "hold",
+            "target": "brick_3004",
+            "modifier": "attempt_to",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0005": {
+        "t_b": 27.935,
+        "t_e": 29.935,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "open",
+            "lowlevel_action": "pick_up",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0006": {
+        "t_b": 30.961,
+        "t_e": 32.961,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "rotate",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "verify",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "incomplete",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0007": {
+        "t_b": 35.194,
+        "t_e": 37.194,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3023",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "show",
+            "lowlevel_action": "pointing_at",
+            "target": "leaflet",
+            "modifier": "attempt_to",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0008": {
+        "t_b": 43.204,
+        "t_e": 45.204,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "hold",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_3660",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0009": {
+        "t_b": 50.77,
+        "t_e": 52.77,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "spread",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3023",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0010": {
+        "t_b": 60.603,
+        "t_e": 62.603,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "make_room",
+            "lowlevel_action": "move",
+            "target": "brick_60599",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "pick_up",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0011": {
+        "t_b": 68.082,
+        "t_e": 70.082,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "verify",
+            "lowlevel_action": "hold",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "show",
+            "lowlevel_action": "pointing_at",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0012": {
+        "t_b": 77.387,
+        "t_e": 79.387,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "available",
+            "modifier": "attempt_to",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3298",
+            "modifier": "incorrectly",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "give",
+            "lowlevel_action": "release",
+            "target": "brick_3298",
+            "modifier": "attempt_to",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "negative_acknowledgement",
+            "lowlevel_action": "pointing_at",
+            "target": "brick_3298",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "discard",
+            "lowlevel_action": "place",
+            "target": "brick_3298",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0013": {
+        "t_b": 87.068,
+        "t_e": 89.068,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_3660",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "move",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "pick_up",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0014": {
+        "t_b": 96.578,
+        "t_e": 98.578,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "move",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "show",
+            "lowlevel_action": "hold",
+            "target": "brick_60032",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "move_head",
+            "target": "brick_60032",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "rotate",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_60032",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0015": {
+        "t_b": 104.444,
+        "t_e": 106.444,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "hold",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_60032",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "press",
+            "target": "brick_60032",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "verify",
+            "lowlevel_action": "look_at",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "show",
+            "lowlevel_action": "hold",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "verify",
+            "lowlevel_action": "look_at",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0016": {
+        "t_b": 108.843,
+        "t_e": 110.843,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "show",
+            "lowlevel_action": "pointing_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "rotate",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "pass",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "pick_up",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0017": {
+        "t_b": 116.985,
+        "t_e": 118.985,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0018": {
+        "t_b": 120.092,
+        "t_e": 122.092,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "unclear",
+            "lowlevel_action": "move",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "show",
+            "lowlevel_action": "pointing_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0019": {
+        "t_b": 130.26,
+        "t_e": 132.26,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "move",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "spread",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "move",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0020": {
+        "t_b": 136.756,
+        "t_e": 138.756,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "verify",
+            "lowlevel_action": "hold",
+            "target": "brick_6143",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "verify",
+            "lowlevel_action": "look_at",
+            "target": "brick_59900",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "keep",
+            "lowlevel_action": "hold",
+            "target": "brick_59900",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0021": {
+        "t_b": 146.904,
+        "t_e": 148.904,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "brick_92947",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "show",
+            "lowlevel_action": "hold",
+            "target": "brick_92947",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "discard",
+            "lowlevel_action": "place",
+            "target": "brick_3679",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "rotate",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_59900",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0022": {
+        "t_b": 155.756,
+        "t_e": 157.756,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "move",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "rotate",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "incomplete",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0023": {
+        "t_b": 164.55,
+        "t_e": 166.55,
+        "events": []
+      },
+      "s_0024": {
+        "t_b": 168.652,
+        "t_e": 170.652,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "show",
+            "lowlevel_action": "pointing_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "place",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0025": {
+        "t_b": 173.167,
+        "t_e": 175.167,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "move",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3298",
+            "modifier": "incorrectly",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "show",
+            "lowlevel_action": "hold",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "show",
+            "lowlevel_action": "hold",
+            "target": "brick_3298",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0026": {
+        "t_b": 184.966,
+        "t_e": 186.966,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_26716",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "brick_26716",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "give",
+            "lowlevel_action": "pick_up",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "keep",
+            "lowlevel_action": "hold",
+            "target": "brick_26716",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "receive",
+            "lowlevel_action": "pick_up",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assist",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0027": {
+        "t_b": 196.259,
+        "t_e": 198.259,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "pass",
+            "target": "brick_26716",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "rotate",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "pick_up",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_2496",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0028": {
+        "t_b": 206.311,
+        "t_e": 208.311,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_26716",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "hold",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0029": {
+        "t_b": 218.307,
+        "t_e": 220.307,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "give",
+            "lowlevel_action": "release",
+            "target": "brick_2496",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "receive",
+            "lowlevel_action": "grasp",
+            "target": "brick_2496",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_2496",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0030": {
+        "t_b": 225.443,
+        "t_e": 227.443,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0031": {
+        "t_b": 228.206,
+        "t_e": 230.206,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assist",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "wait",
+            "lowlevel_action": "release",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0032": {
+        "t_b": 233.61,
+        "t_e": 235.61,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "play",
+            "lowlevel_action": "move",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0033": {
+        "t_b": 241.185,
+        "t_e": 243.185,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "show",
+            "lowlevel_action": "place",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "demonstrate",
+            "lowlevel_action": "pointing_at",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      }
+    },
+    "181182": {
+      "s_0001": {
+        "t_b": 0.0,
+        "t_e": 2.0,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "open",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "brick_separator",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "brick_separator",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "close",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "play",
+            "lowlevel_action": "move",
+            "target": "brick_separator",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0002": {
+        "t_b": 3.191,
+        "t_e": 5.191,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "open",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "open",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "close",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "move",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "close",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0003": {
+        "t_b": 10.216,
+        "t_e": 12.216,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "close",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "close",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0004": {
+        "t_b": 17.335,
+        "t_e": 19.335,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "place",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "move",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0005": {
+        "t_b": 27.935,
+        "t_e": 29.935,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "place",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "keep",
+            "lowlevel_action": "hold",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "draw_attention",
+            "lowlevel_action": "pointing_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "keep",
+            "lowlevel_action": "place",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "show",
+            "lowlevel_action": "pick_up",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0006": {
+        "t_b": 30.961,
+        "t_e": 32.961,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "draw_attention",
+            "lowlevel_action": "pointing_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0007": {
+        "t_b": 35.194,
+        "t_e": 37.194,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "keep",
+            "lowlevel_action": "hold",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "move",
+            "target": "brick_6141",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "place",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "spread",
+            "target": "available",
+            "modifier": "incomplete",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "hold",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "brick_3001",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0008": {
+        "t_b": 43.204,
+        "t_e": 45.204,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "move",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "give",
+            "lowlevel_action": "place",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0009": {
+        "t_b": 50.77,
+        "t_e": 52.77,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "show",
+            "lowlevel_action": "hold",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "give",
+            "lowlevel_action": "hold",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "receive",
+            "lowlevel_action": "grasp",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "hold",
+            "target": "brick_3039",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0010": {
+        "t_b": 60.603,
+        "t_e": 62.603,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "move",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0011": {
+        "t_b": 68.082,
+        "t_e": 70.082,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "pass",
+            "target": "brick_3023",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "place",
+            "target": "brick_3023",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "draw_attention",
+            "lowlevel_action": "pointing_at",
+            "target": "leaflet",
+            "modifier": "incomplete",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0012": {
+        "t_b": 77.387,
+        "t_e": 79.387,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "pick_up",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "move",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "move",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0013": {
+        "t_b": 87.068,
+        "t_e": 89.068,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3062",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "brick_3062",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "show",
+            "lowlevel_action": "hold",
+            "target": "brick_3062",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3062",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "brick_3062",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "brick_3062",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "keep",
+            "lowlevel_action": "hold",
+            "target": "brick_3062",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0014": {
+        "t_b": 96.578,
+        "t_e": 98.578,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "pick_up",
+            "target": "brick_60598",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "place",
+            "target": "brick_60598",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "hold",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "hold",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0015": {
+        "t_b": 104.444,
+        "t_e": 106.444,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "negative_acknowledgement",
+            "lowlevel_action": "move_head",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "pass",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "move",
+            "target": "brick_74967",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "pick_up",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "negative_acknowledgement",
+            "lowlevel_action": "hand_gesture",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "keep",
+            "lowlevel_action": "hold",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "pass",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0016": {
+        "t_b": 108.843,
+        "t_e": 110.843,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "show",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "make_room",
+            "lowlevel_action": "move",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "release",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "draw_attention",
+            "lowlevel_action": "pointing_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "pick_up",
+            "target": "leaflet",
+            "modifier": "incomplete",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0017": {
+        "t_b": 116.985,
+        "t_e": 118.985,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "show",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0018": {
+        "t_b": 120.092,
+        "t_e": 122.092,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "move_head",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0019": {
+        "t_b": 130.26,
+        "t_e": 132.26,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "spread",
+            "target": "available",
+            "modifier": "incorrectly",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "discard",
+            "lowlevel_action": "place",
+            "target": "brick_11213",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "spread",
+            "target": "available",
+            "modifier": "incorrectly",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0020": {
+        "t_b": 136.756,
+        "t_e": 138.756,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "discard",
+            "lowlevel_action": "place",
+            "target": "brick_3021",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "keep",
+            "lowlevel_action": "hold",
+            "target": "brick_3022",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3020",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "rotate",
+            "target": "brick_3020",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "place",
+            "target": "brick_3020",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0021": {
+        "t_b": 146.904,
+        "t_e": 148.904,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "move_head",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "show",
+            "lowlevel_action": "hold",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0022": {
+        "t_b": 155.756,
+        "t_e": 157.756,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "spread",
+            "target": "available",
+            "modifier": "incorrectly",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "spread",
+            "target": "available",
+            "modifier": "incorrectly",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "move",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0023": {
+        "t_b": 164.55,
+        "t_e": 166.55,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_28573",
+            "modifier": "attempt_to",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0024": {
+        "t_b": 168.652,
+        "t_e": 170.652,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "rotate",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "pick_up",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "hold",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0025": {
+        "t_b": 173.167,
+        "t_e": 175.167,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "show",
+            "lowlevel_action": "hold",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_28573",
+            "modifier": "incorrectly",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0026": {
+        "t_b": 184.966,
+        "t_e": 186.966,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "prepare",
+            "lowlevel_action": "flip",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "move",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_6182",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0027": {
+        "t_b": 196.259,
+        "t_e": 198.259,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "keep",
+            "lowlevel_action": "hold",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "keep",
+            "lowlevel_action": "hold",
+            "target": "brick_3004",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "pick_up",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0028": {
+        "t_b": 206.311,
+        "t_e": 208.311,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "show",
+            "lowlevel_action": "place",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0029": {
+        "t_b": 218.307,
+        "t_e": 220.307,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "brick_3710",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0030": {
+        "t_b": 225.443,
+        "t_e": 227.443,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "discard",
+            "lowlevel_action": "place",
+            "target": "brick_4460",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "search",
+            "lowlevel_action": "spread",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0031": {
+        "t_b": 228.206,
+        "t_e": 230.206,
+        "events": [
+          {
+            "subject": "participant_a",
+            "highlevel_action": "draw_attention",
+            "lowlevel_action": "pointing_at",
+            "target": "unclear",
+            "modifier": "incorrectly",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "spread",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0032": {
+        "t_b": 233.61,
+        "t_e": 235.61,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "hold",
+            "target": "brick_6215",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "brick_6215",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "give",
+            "lowlevel_action": "place",
+            "target": "brick_6215",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "brick_6215",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "search",
+            "lowlevel_action": "look_at",
+            "target": "available",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_3062",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "receive",
+            "lowlevel_action": "pick_up",
+            "target": "brick_6215",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0033": {
+        "t_b": 241.185,
+        "t_e": 243.185,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "select",
+            "lowlevel_action": "pick_up",
+            "target": "brick_59900",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_3062",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "give",
+            "lowlevel_action": "place",
+            "target": "brick_59900",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0034": {
+        "t_b": 246.106,
+        "t_e": 248.106,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "move_body",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "relocate",
+            "lowlevel_action": "pass",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "brick_28573",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0035": {
+        "t_b": 252.681,
+        "t_e": 254.681,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "pay_attention",
+            "lowlevel_action": "look_at",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "assemble",
+            "lowlevel_action": "attach",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_b",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "keep",
+            "lowlevel_action": "hold",
+            "target": "partial_model",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      },
+      "s_0036": {
+        "t_b": 263.445,
+        "t_e": 265.445,
+        "events": [
+          {
+            "subject": "participant_b",
+            "highlevel_action": "negative_acknowledgement",
+            "lowlevel_action": "hand_gesture",
+            "target": "model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "show",
+            "lowlevel_action": "pick_up",
+            "target": "main_model",
+            "modifier": "none",
+            "score": 1.0
+          },
+          {
+            "subject": "participant_a",
+            "highlevel_action": "inspect_check",
+            "lowlevel_action": "look_at",
+            "target": "leaflet",
+            "modifier": "none",
+            "score": 1.0
+          }
+        ]
+      }
+    }
+  }
+}
