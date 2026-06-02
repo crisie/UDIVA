@@ -1,0 +1,57 @@
+# Random-delta example over data/spotting/181182.json and data/spotting/001080.json.
+#
+# Run from the repo root:
+# PYTHONPATH=parser-lib python3 -m parser_lib --config parser-lib/configs/random_delta_181182_001080.toml
+
+[input]
+# Point the glob to the current dataset location
+glob = "../data/spotting/*.json"
+video_ids = ["181182", "001080"]
+
+[defaults.segmentation]
+name = "random_delta_window"
+window_sec = 2.0
+# d1/d2 are random gaps after each 2-second window. 0 means uniform; negatives overlap.
+d1_sec = 0.0
+d2_sec = 10.0
+seed = 2026
+start_sec = 0.0
+# Keep the final segment even if less than window_sec remains; it will be clipped to the timeline end.
+include_partial = true
+
+[defaults.selection]
+name = "every_overlap"
+
+[outputs.reference]
+path = "../out/random_delta_181182_001080/reference.json"
+# Include events
+include_events = true
+# Emit a score field on each event when true; false leaves scores out of the output payload.
+include_score = false
+# Decimal places in the JSON output
+time_decimals = 3
+
+[outputs.reference.fields]
+# Event keys to emit
+verbal = ["subject", "utterance_type", "target", "modifier"]
+nonverbal = ["subject", "highlevel_action", "lowlevel_action", "target", "modifier"]
+
+[outputs.example]
+path = "../out/random_delta_181182_001080/example.json"
+include_events = true
+include_score = true
+score_default = 1.0
+score_decimals = 2
+time_decimals = 3
+
+[outputs.example.fields]
+verbal = ["subject", "utterance_type", "target", "modifier"]
+nonverbal = ["subject", "highlevel_action", "lowlevel_action", "target", "modifier"]
+
+[outputs.template]
+path = "../out/random_delta_181182_001080/template.json"
+include_events = false
+# Emit a score field on each event when true; false leaves scores out of the output payload.
+include_score = false
+# Decimal places in the JSON output
+time_decimals = 3
