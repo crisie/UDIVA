@@ -1,0 +1,75 @@
+1
+00:00:00,020 --> 00:00:02,800
+{"id": "v_001", "subject": "participant_a", "act": "V", "modifier": "none", "utterance_type": "express_other", "target": "participant_b"}
+
+2
+00:00:00,000 --> 00:00:03,090
+{"id": "nv_001", "subject": "participant_b", "act": "NV", "modifier": "none", "low_level_action": "none", "high_level_action": "search", "utterance_type": "none", "target": "available"}
+
+3
+00:00:00,000 --> 00:00:02,940
+{"id": "nv_002", "subject": "participant_a", "act": "NV", "modifier": "none", "low_level_action": "pointing at", "high_level_action": "draw attention", "utterance_type": "none", "target": "leaflet"}
+
+4
+00:00:01,440 --> 00:00:02,780
+{"id": "nv_003", "subject": "participant_a", "act": "NV", "modifier": "none", "low_level_action": "none", "high_level_action": "verify", "utterance_type": "none", "target": "participant_b"}
+
+5
+00:00:01,329 --> 00:00:02,670
+{"id": "nv_004", "subject": "participant_b", "act": "NV", "modifier": "none", "low_level_action": "pick up", "high_level_action": "select", "utterance_type": "none", "target": "3039_bright-red 1, 3001_bright-red 1, 3004_bright-red 1"}
+
+6
+00:00:02,900 --> 00:00:03,500
+{"id": "v_002", "subject": "participant_b", "act": "V", "modifier": "none", "utterance_type": "agree", "target": "participant_a"}
+
+7
+00:00:03,500 --> 00:00:04,360
+{"id": "v_003", "subject": "participant_b", "act": "V", "modifier": "none", "utterance_type": "declare_selection", "target": "participant_a"}
+
+8
+00:00:02,440 --> 00:00:03,000
+{"id": "nv_005", "subject": "participant_b", "act": "NV", "modifier": "none", "low_level_action": "drop", "high_level_action": "discard", "utterance_type": "none", "target": "3001_bright-red 1, 3004_bright-red 1"}
+
+9
+00:00:03,040 --> 00:00:03,930
+{"id": "nv_006", "subject": "participant_b", "act": "NV", "modifier": "none", "low_level_action": "hold", "high_level_action": "inspect/check", "utterance_type": "none", "target": "partial model 1"}
+
+10
+00:00:03,360 --> 00:00:05,100
+{"id": "nv_007", "subject": "participant_a", "act": "NV", "modifier": "none", "low_level_action": "flip", "high_level_action": "search", "utterance_type": "none", "target": "leaflet"}
+
+11
+00:00:04,500 --> 00:00:05,400
+{"id": "v_004", "subject": "participant_b", "act": "V", "modifier": "none", "utterance_type": "instruct", "target": "participant_a"}
+
+12
+00:00:04,410 --> 00:00:04,820
+{"id": "nv_008", "subject": "participant_b", "act": "NV", "modifier": "none", "low_level_action": "pick up", "high_level_action": "select", "utterance_type": "none", "target": "D_blue 1"}
+
+13
+00:00:04,820 --> 00:00:06,010
+{"id": "nv_009", "subject": "participant_b", "act": "NV", "modifier": "none", "low_level_action": "hold", "high_level_action": "inspect/check", "utterance_type": "none", "target": "D_blue 1"}
+
+14
+00:00:04,830 --> 00:00:05,144
+{"id": "nv_010", "subject": "participant_a", "act": "NV", "modifier": "none", "low_level_action": "pick up", "high_level_action": "select", "utterance_type": "none", "target": "D_red 1"}
+
+15
+00:00:05,144 --> 00:00:06,420
+{"id": "nv_011", "subject": "participant_a", "act": "NV", "modifier": "none", "low_level_action": "hold", "high_level_action": "inspect/check", "utterance_type": "none", "target": "D_red 1"}
+
+16
+00:00:06,010 --> 00:00:07,450
+{"id": "nv_012", "subject": "participant_b", "act": "NV", "modifier": "attempt to", "low_level_action": "none", "high_level_action": "assemble", "utterance_type": "none", "target": "D_blue 1"}
+
+17
+00:00:07,350 --> 00:00:08,000
+{"id": "nv_013", "subject": "participant_b", "act": "NV", "modifier": "none", "low_level_action": "none", "high_level_action": "search", "utterance_type": "none", "target": "available"}
+
+18
+00:00:06,490 --> 00:00:07,250
+{"id": "nv_014", "subject": "participant_a", "act": "NV", "modifier": "none", "low_level_action": "place", "high_level_action": "discard", "utterance_type": "none", "target": "D_red 1"}
+
+19
+00:00:07,230 --> 00:00:08,000
+{"id": "nv_015", "subject": "participant_a", "act": "NV", "modifier": "none", "low_level_action": "none", "high_level_action": "inspect/check", "utterance_type": "none", "target": "leaflet"}

@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audit Timeline Viewer</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111316;
+      --panel: #181b20;
+      --panel-2: #20242b;
+      --line: #3a414c;
+      --text: #e6edf3;
+      --muted: #9aa6b2;
+      --verbal: #4ea1ff;
+      --nonverbal: #f6b44b;
+      --event: #48d6a0;
+      --loss: #f05d5e;
+      --warn: #e7c14f;
+      --playhead: #f7f7f0;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow: hidden;
+    }
+    body { display: grid; grid-template-rows: auto 1fr; }
+    button, select, input {
+      font: inherit;
+      color: var(--text);
+      background: #242933;
+      border: 1px solid #3b4350;
+      border-radius: 6px;
+      height: 32px;
+    }
+    button { padding: 0 10px; cursor: pointer; }
+    button:hover { background: #303745; }
+    input[type="range"] { accent-color: var(--verbal); }
+    label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      background: #15181d;
+    }
+    .topbar .grow { flex: 1; }
+    .workspace {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: minmax(320px, 430px) 1fr;
+    }
+    .side {
+      min-height: 0;
+      overflow: auto;
+      border-right: 1px solid var(--line);
+      background: var(--panel);
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+    }
+    .videoBox {
+      background: #090a0d;
+      border-bottom: 1px solid var(--line);
+      min-height: 230px;
+      display: grid;
+      place-items: center;
+    }
+    video {
+      width: 100%;
+      max-height: 360px;
+      background: black;
+      display: none;
+    }
+    .noVideo {
+      color: var(--muted);
+      padding: 24px;
+      text-align: center;
+    }
+    .panel {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .kv {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 6px 10px;
+      font-size: 13px;
+      align-items: start;
+    }
+    .kv .k { color: var(--muted); }
+    .details {
+      padding: 12px;
+      overflow: auto;
+      font-size: 13px;
+    }
+    .subtitleEmpty {
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .subtitleItem {
+      border-left: 3px solid #586170;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+      background: #141820;
+      border-radius: 6px;
+    }
+    .subtitleItem.active {
+      border-left-color: var(--event);
+      background: #17211e;
+    }
+    .subtitleMeta {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+    .subtitleText {
+      color: #f2f6f7;
+      font-size: 14px;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+    .subtitleLabel {
+      color: #dbeafe;
+      font-weight: 650;
+    }
+    .main {
+      min-width: 0;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      background: #101215;
+    }
+    .strip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .strip .grow { flex: 1; }
+    .timeReadout {
+      font-variant-numeric: tabular-nums;
+      color: #f3f5f7;
+      background: #0b0d10;
+      border: 1px solid #2e3540;
+      border-radius: 6px;
+      padding: 6px 10px;
+      min-width: 112px;
+      text-align: center;
+    }
+    .timelineWrap {
+      min-height: 0;
+      overflow: auto;
+      position: relative;
+      background: #0f1115;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      min-height: 420px;
+      cursor: grab;
+    }
+    canvas.dragging { cursor: grabbing; }
+    .scrollbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 12px;
+      border-top: 1px solid var(--line);
+      background: #15181d;
+    }
+    .pill {
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: #232935;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .swatch {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    @media (max-width: 900px) {
+      .workspace { grid-template-columns: 1fr; grid-template-rows: 340px 1fr; }
+      .side { border-right: 0; border-bottom: 1px solid var(--line); grid-template-rows: auto 1fr; }
+      .details { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <select id="videoSelect"></select>
+    <span class="pill" id="summary"></span>
+    <span class="grow"></span>
+    <label><input type="checkbox" id="showVerbal" checked> <span class="swatch" style="background: var(--verbal)"></span> verbal</label>
+    <label><input type="checkbox" id="showNonverbal" checked> <span class="swatch" style="background: var(--nonverbal)"></span> nonverbal</label>
+  </div>
+  <div class="workspace">
+    <aside class="side">
+      <div class="videoBox">
+        <video id="video" controls preload="metadata" playsinline></video>
+        <div class="noVideo" id="noVideo">No video mapped</div>
+      </div>
+      <div class="panel">
+        <div class="kv" id="stats"></div>
+      </div>
+      <div class="details" id="details"></div>
+    </aside>
+    <main class="main">
+      <div class="strip">
+        <button id="prevBtn">Prev</button>
+        <button id="playBtn">Play</button>
+        <button id="nextBtn">Next</button>
+        <div class="timeReadout" id="timeReadout">0.000s</div>
+        <label>window <input id="windowRange" type="range" min="4" max="180" step="1" value="4"></label>
+        <span id="windowLabel" class="pill">4s</span>
+        <label><input type="checkbox" id="followPlayhead" checked> follow</label>
+        <span class="grow"></span>
+        <span class="pill" id="visibleCount"></span>
+      </div>
+      <div class="strip">
+        <input id="timeSlider" type="range" min="0" max="1" step="0.001" value="0" style="width: 100%">
+      </div>
+      <div class="timelineWrap" id="timelineWrap">
+        <canvas id="timeline"></canvas>
+      </div>
+      <div class="scrollbar">
+        <input id="viewSlider" type="range" min="0" max="1" step="0.001" value="0">
+        <span class="pill" id="rangeReadout">0.000 - 30.000s</span>
+      </div>
+    </main>
+  </div>
+  <script>
+    const state = {
+      data: null,
+      videoIndex: 0,
+      viewStart: 0,
+      windowSec: 4,
+      playhead: 0,
+      selected: null,
+      hitboxes: [],
+      dragging: false,
+      dragMoved: false,
+      dragX: 0,
+      dragStartView: 0,
+      internalPlaying: false,
+      lastFrameTime: 0,
+      videoSyncHandle: null
+    };
+
+    const els = {
+      videoSelect: document.getElementById('videoSelect'),
+      summary: document.getElementById('summary'),
+      showVerbal: document.getElementById('showVerbal'),
+      showNonverbal: document.getElementById('showNonverbal'),
+      stats: document.getElementById('stats'),
+      details: document.getElementById('details'),
+      video: document.getElementById('video'),
+      noVideo: document.getElementById('noVideo'),
+      prevBtn: document.getElementById('prevBtn'),
+      playBtn: document.getElementById('playBtn'),
+      nextBtn: document.getElementById('nextBtn'),
+      timeReadout: document.getElementById('timeReadout'),
+      windowRange: document.getElementById('windowRange'),
+      windowLabel: document.getElementById('windowLabel'),
+      followPlayhead: document.getElementById('followPlayhead'),
+      visibleCount: document.getElementById('visibleCount'),
+      timeSlider: document.getElementById('timeSlider'),
+      viewSlider: document.getElementById('viewSlider'),
+      rangeReadout: document.getElementById('rangeReadout'),
+      wrap: document.getElementById('timelineWrap'),
+      canvas: document.getElementById('timeline')
+    };
+    const ctx = els.canvas.getContext('2d');
+
+    fetch('/data.json')
+      .then(r => r.json())
+      .then(data => {
+        state.data = data;
+        initialize();
+      });
+
+    function initialize() {
+      els.summary.textContent = `${state.data.summary.num_videos} videos, ${state.data.summary.num_segments} segments, ${state.data.summary.num_events} events`;
+      els.videoSelect.innerHTML = '';
+      state.data.videos.forEach((video, idx) => {
+        const option = document.createElement('option');
+        option.value = idx;
+        option.textContent = `${video.video_id} (${fmt(video.duration)}s)`;
+        els.videoSelect.appendChild(option);
+      });
+      bindEvents();
+      selectVideo(0);
+      requestAnimationFrame(draw);
+    }
+
+    function bindEvents() {
+      window.addEventListener('resize', draw);
+      els.videoSelect.addEventListener('change', () => selectVideo(Number(els.videoSelect.value)));
+      els.showVerbal.addEventListener('change', draw);
+      els.showNonverbal.addEventListener('change', draw);
+      els.windowRange.addEventListener('input', () => {
+        state.windowSec = Number(els.windowRange.value);
+        els.windowLabel.textContent = `${state.windowSec}s`;
+        clampView();
+        draw();
+      });
+      els.viewSlider.addEventListener('input', () => {
+        state.viewStart = Number(els.viewSlider.value);
+        clampView();
+        draw();
+      });
+      els.timeSlider.addEventListener('input', () => setPlayhead(Number(els.timeSlider.value), true));
+      els.prevBtn.addEventListener('click', () => jumpItem(-1));
+      els.nextBtn.addEventListener('click', () => jumpItem(1));
+      els.playBtn.addEventListener('click', togglePlay);
+      els.video.addEventListener('timeupdate', syncPlayheadFromVideo);
+      els.video.addEventListener('play', () => {
+        state.internalPlaying = false;
+        els.playBtn.textContent = 'Pause';
+        startVideoSyncLoop();
+      });
+      els.video.addEventListener('pause', () => {
+        stopVideoSyncLoop();
+        syncPlayheadFromVideo();
+        els.playBtn.textContent = state.internalPlaying ? 'Pause' : 'Play';
+      });
+      els.video.addEventListener('ended', () => {
+        stopVideoSyncLoop();
+        syncPlayheadFromVideo();
+        els.playBtn.textContent = 'Play';
+      });
+      els.video.addEventListener('loadedmetadata', applyVideoMetadata);
+      els.video.addEventListener('error', showVideoLoadError);
+
+      els.canvas.addEventListener('wheel', onWheel, { passive: false });
+      els.canvas.addEventListener('mousedown', onMouseDown);
+      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('mouseup', onMouseUp);
+      els.canvas.addEventListener('dblclick', event => {
+        const time = xToTime(event.offsetX);
+        setPlayhead(time, true);
+      });
+      
+      window.addEventListener('keydown', event => {
+        if (event.code === 'Space') {
+          event.preventDefault();
+          togglePlay();
+        } else if (event.code === 'KeyJ') {
+          event.preventDefault();
+          const video = videoData();
+          const step = 0.5;
+          setPlayhead(Math.max(0, state.playhead - step), true);
+        } else if (event.code === 'KeyK') {
+          event.preventDefault();
+          if (!state.internalPlaying && els.video.src && !els.video.paused) {
+            els.video.pause();
+          } else if (state.internalPlaying) {
+            state.internalPlaying = false;
+            els.playBtn.textContent = 'Play';
+          }
+        } else if (event.code === 'KeyL') {
+          event.preventDefault();
+          const video = videoData();
+          const step = 0.5;
+          setPlayhead(Math.min(video.duration, state.playhead + step), true);
+        }
+      });
+    }
+
+    function videoData() {
+      return state.data.videos[state.videoIndex];
+    }
+
+    function selectVideo(index) {
+      stopVideoSyncLoop();
+      state.internalPlaying = false;
+      els.playBtn.textContent = 'Play';
+      if (!els.video.paused) els.video.pause();
+
+      state.videoIndex = Math.max(0, Math.min(index, state.data.videos.length - 1));
+      const video = videoData();
+      els.videoSelect.value = String(state.videoIndex);
+      state.viewStart = 0;
+      state.playhead = 0;
+      state.selected = null;
+      els.timeSlider.max = String(Math.max(video.duration, 0.001));
+      els.viewSlider.max = String(Math.max(video.duration - state.windowSec, 0.001));
+
+      if (video.has_video && video.video_url) {
+        els.noVideo.textContent = 'No video mapped';
+        els.video.muted = false;
+        if (els.video.volume === 0) els.video.volume = 1;
+        els.video.src = video.video_url;
+        els.video.load();
+        els.video.style.display = 'block';
+        els.noVideo.style.display = 'none';
+      } else {
+        els.video.removeAttribute('src');
+        els.video.load();
+        els.video.style.display = 'none';
+        els.noVideo.textContent = 'No video mapped';
+        els.noVideo.style.display = 'block';
+      }
+      renderStats();
+      updateReadouts();
+      draw();
+    }
+
+    function renderStats() {
+      const video = videoData();
+      const verbal = video.channels.verbal;
+      const nonverbal = video.channels.nonverbal;
+      const rows = [
+        ['video', video.video_id],
+        ['duration', `${fmt(video.duration)}s`],
+        ['raw events', video.num_raw_events_used],
+        ['subtitles', video.subtitles.length],
+        ['verbal', `${verbal.num_segments} seg / ${verbal.num_events} events`],
+        ['nonverbal', `${nonverbal.num_segments} seg / ${nonverbal.num_events} events`],
+        ['skipped', video.skipped_count],
+      ];
+      els.stats.innerHTML = rows.map(([k, v]) => `<div class="k">${escapeHtml(k)}</div><div>${escapeHtml(String(v))}</div>`).join('');
+    }
+
+    function updateReadouts() {
+      const video = videoData();
+      els.timeReadout.textContent = `${fmt(state.playhead)}s`;
+      els.timeSlider.max = String(Math.max(video.duration, 0.001));
+      els.timeSlider.value = String(Math.min(state.playhead, video.duration));
+      els.viewSlider.max = String(Math.max(video.duration - state.windowSec, 0.001));
+      els.viewSlider.value = String(state.viewStart);
+      els.rangeReadout.textContent = `${fmt(state.viewStart)} - ${fmt(Math.min(video.duration, state.viewStart + state.windowSec))}s`;
+      renderSubtitles();
+    }
+
+    function renderSubtitles() {
+      const video = videoData();
+      const subtitles = video.subtitles || [];
+      if (!subtitles.length) {
+        els.details.innerHTML = '<div class="subtitleEmpty">No subtitles mapped.</div>';
+        return;
+      }
+
+      const epsilon = 0.025;
+      let active = subtitles.filter(subtitle => subtitle.start <= state.playhead + epsilon && subtitle.end >= state.playhead - epsilon);
+      if (!active.length) {
+        active = nearestSubtitles(subtitles, state.playhead, 2);
+      }
+
+      els.details.innerHTML = active.map(subtitle => {
+        const isActive = subtitle.start <= state.playhead + epsilon && subtitle.end >= state.playhead - epsilon;
+        const meta = [
+          `${fmt(subtitle.start)} - ${fmt(subtitle.end)}s`,
+          subtitle.meta
+        ].filter(Boolean).join(' · ');
+        return `
+          <div class="subtitleItem${isActive ? ' active' : ''}">
+            <div class="subtitleMeta">${escapeHtml(meta)}</div>
+            <div class="subtitleText"><span class="subtitleLabel">${escapeHtml(subtitle.label)}</span>${subtitle.text ? `: ${escapeHtml(subtitle.text)}` : ''}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function nearestSubtitles(subtitles, time, limit) {
+      return [...subtitles]
+        .map(subtitle => ({ subtitle, distance: Math.min(Math.abs(subtitle.start - time), Math.abs(subtitle.end - time)) }))
+        .sort((a, b) => a.distance - b.distance || a.subtitle.start - b.subtitle.start)
+        .slice(0, limit)
+        .map(item => item.subtitle)
+        .sort((a, b) => a.start - b.start);
+    }
+
+    function togglePlay() {
+      const video = videoData();
+      if (video.has_video && els.video.src) {
+        if (els.video.paused) {
+          els.video.currentTime = state.playhead;
+          els.video.muted = false;
+          if (els.video.volume === 0) els.video.volume = 1;
+          const playPromise = els.video.play();
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(error => {
+              stopVideoSyncLoop();
+              els.playBtn.textContent = 'Play';
+              els.details.innerHTML = `<div class="subtitleEmpty">${escapeHtml(error.message || error)}</div>`;
+            });
+          }
+        } else {
+          els.video.pause();
+        }
+        return;
+      }
+      state.internalPlaying = !state.internalPlaying;
+      els.playBtn.textContent = state.internalPlaying ? 'Pause' : 'Play';
+      state.lastFrameTime = performance.now();
+      if (state.internalPlaying) requestAnimationFrame(stepInternalPlay);
+    }
+
+    function stepInternalPlay(now) {
+      if (!state.internalPlaying) return;
+      const delta = (now - state.lastFrameTime) / 1000;
+      state.lastFrameTime = now;
+      setPlayhead(state.playhead + delta, false);
+      if (state.playhead >= videoData().duration) {
+        state.internalPlaying = false;
+        els.playBtn.textContent = 'Play';
+        return;
+      }
+      requestAnimationFrame(stepInternalPlay);
+    }
+
+    function startVideoSyncLoop() {
+      if (state.videoSyncHandle !== null) return;
+      const tick = () => {
+        state.videoSyncHandle = null;
+        if (els.video.paused || els.video.ended) return;
+        syncPlayheadFromVideo();
+        state.videoSyncHandle = requestAnimationFrame(tick);
+      };
+      state.videoSyncHandle = requestAnimationFrame(tick);
+    }
+
+    function stopVideoSyncLoop() {
+      if (state.videoSyncHandle === null) return;
+      cancelAnimationFrame(state.videoSyncHandle);
+      state.videoSyncHandle = null;
+    }
+
+    function syncPlayheadFromVideo() {
+      if (!state.data || !Number.isFinite(els.video.currentTime)) return;
+      const video = videoData();
+      const mediaDuration = Number.isFinite(els.video.duration) ? els.video.duration : 0;
+      if (mediaDuration > video.duration) {
+        video.duration = Number(mediaDuration.toFixed(3));
+        renderStats();
+      }
+      state.playhead = clamp(els.video.currentTime, 0, Math.max(video.duration, mediaDuration, 0.001));
+      if (els.followPlayhead.checked) keepPlayheadVisible();
+      updateReadouts();
+      draw();
+    }
+
+    function applyVideoMetadata() {
+      if (!state.data || !Number.isFinite(els.video.duration)) return;
+      const video = videoData();
+      if (els.video.duration > video.duration) {
+        video.duration = Number(els.video.duration.toFixed(3));
+        renderStats();
+      }
+      clampView();
+      updateReadouts();
+      draw();
+    }
+
+    function showVideoLoadError() {
+      if (!state.data) return;
+      stopVideoSyncLoop();
+      els.video.style.display = 'none';
+      els.video.removeAttribute('src');
+      els.video.load();
+      els.noVideo.textContent = 'Could not load mapped video';
+      els.noVideo.style.display = 'block';
+      els.playBtn.textContent = 'Play';
+    }
+
+    function setPlayhead(time, syncVideo) {
+      const video = videoData();
+      state.playhead = clamp(time, 0, video.duration);
+      if (syncVideo && video.has_video && els.video.src) {
+        els.video.currentTime = state.playhead;
+      }
+      if (els.followPlayhead.checked) keepPlayheadVisible();
+      updateReadouts();
+      draw();
+    }
+
+    function keepPlayheadVisible() {
+      const margin = state.windowSec * 0.12;
+      if (state.playhead < state.viewStart + margin) {
+        state.viewStart = state.playhead - margin;
+      } else if (state.playhead > state.viewStart + state.windowSec - margin) {
+        state.viewStart = state.playhead - state.windowSec + margin;
+      }
+      clampView();
+    }
+
+    function jumpItem(direction) {
+      const items = allVisibleItems().sort((a, b) => a.start - b.start);
+      if (!items.length) return;
+      const epsilon = 0.02;
+      let next = null;
+      if (direction > 0) {
+        next = items.find(item => item.start > state.playhead + epsilon) || items[0];
+      } else {
+        for (let i = items.length - 1; i >= 0; i--) {
+          if (items[i].start < state.playhead - epsilon) {
+            next = items[i];
+            break;
+          }
+        }
+        next = next || items[items.length - 1];
+      }
+      selectItem(next);
+      setPlayhead(next.start, true);
+    }
+
+    function allVisibleItems() {
+      const video = videoData();
+      const items = [];
+      for (const channelName of enabledChannels()) {
+        const channel = video.channels[channelName];
+        channel.segments.forEach(segment => items.push({
+          kind: 'segment',
+          id: segment.uid,
+          start: segment.t_b,
+          end: segment.t_e,
+          data: segment
+        }));
+        channel.events.forEach(event => items.push({
+          kind: 'event',
+          id: event.uid,
+          start: event.start,
+          end: event.end,
+          data: event
+        }));
+      }
+      return items;
+    }
+
+    function enabledChannels() {
+      const channels = [];
+      if (els.showVerbal.checked) channels.push('verbal');
+      if (els.showNonverbal.checked) channels.push('nonverbal');
+      return channels;
+    }
+
+    function draw() {
+      if (!state.data) return;
+      const dpr = window.devicePixelRatio || 1;
+      const width = Math.max(800, els.wrap.clientWidth);
+      const layout = buildLayout(width);
+      const height = Math.max(420, layout.height);
+      els.canvas.style.height = `${height}px`;
+      els.canvas.width = Math.floor(width * dpr);
+      els.canvas.height = Math.floor(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+      state.hitboxes = [];
+
+      drawBackground(width, height);
+      drawRuler(width, layout.left);
+      drawRows(layout, width);
+      drawPlayhead(layout.left, width, height);
+
+      els.visibleCount.textContent = `${state.hitboxes.length} visible items`;
+      updateReadouts();
+    }
+
+    function buildLayout(width) {
+      const left = 132;
+      const right = 18;
+      const lanes = [];
+      let y = 38;
+      const video = videoData();
+      for (const channelName of enabledChannels()) {
+        const channel = video.channels[channelName];
+        lanes.push({ type: 'header', channel: channelName, y, h: 25 });
+        y += 25;
+
+        const segments = visibleOnly(channel.segments, 't_b', 't_e').map(item => ({ ...item, start: item.t_b, end: item.t_e }));
+        const segmentLanes = layoutLanes(segments);
+        lanes.push({ type: 'segments', channel: channelName, y, h: Math.max(26, segmentLanes.length * 24 + 8), lanes: segmentLanes });
+        y += Math.max(26, segmentLanes.length * 24 + 8);
+
+        const events = visibleOnly(channel.events, 'start', 'end');
+        const eventLanes = layoutLanes(events);
+        lanes.push({ type: 'events', channel: channelName, y, h: Math.max(28, eventLanes.length * 24 + 10), lanes: eventLanes });
+        y += Math.max(28, eventLanes.length * 24 + 10) + 12;
+      }
+      return { left, right, plotW: width - left - right, height: y + 30, lanes };
+    }
+
+    function visibleOnly(items, startKey, endKey) {
+      const start = state.viewStart;
+      const end = state.viewStart + state.windowSec;
+      return items.filter(item => item[endKey] >= start && item[startKey] <= end);
+    }
+
+    function layoutLanes(items) {
+      const sorted = [...items].sort((a, b) => (a.start - b.start) || (a.end - b.end));
+      const lanes = [];
+      for (const item of sorted) {
+        let placed = false;
+        for (const lane of lanes) {
+          if (item.start >= lane.end - 0.001) {
+            lane.items.push(item);
+            lane.end = item.end;
+            placed = true;
+            break;
+          }
+        }
+        if (!placed) lanes.push({ end: item.end, items: [item] });
+      }
+      return lanes;
+    }
+
+    function drawBackground(width, height) {
+      ctx.fillStyle = '#0f1115';
+      ctx.fillRect(0, 0, width, height);
+      ctx.fillStyle = '#15181d';
+      ctx.fillRect(0, 0, width, 38);
+      ctx.strokeStyle = '#2d343f';
+      ctx.beginPath();
+      ctx.moveTo(0, 38.5);
+      ctx.lineTo(width, 38.5);
+      ctx.stroke();
+    }
+
+    function drawRuler(width, left) {
+      const plotW = width - left - 18;
+      const tick = niceTick(state.windowSec / 8);
+      const first = Math.floor(state.viewStart / tick) * tick;
+      ctx.save();
+      ctx.font = '12px ui-sans-serif, system-ui';
+      ctx.textBaseline = 'top';
+      for (let t = first; t <= state.viewStart + state.windowSec + tick; t += tick) {
+        const x = timeToX(t, left, plotW);
+        if (x < left || x > width - 18) continue;
+        ctx.strokeStyle = '#29313b';
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, 10000);
+        ctx.stroke();
+        ctx.fillStyle = '#a6b0bb';
+        ctx.fillText(fmt(t), x + 4, 10);
+      }
+      ctx.restore();
+    }
+
+    function drawRows(layout, width) {
+      const plotW = layout.plotW;
+      for (const row of layout.lanes) {
+        if (row.type === 'header') {
+          drawChannelHeader(row, width);
+        } else if (row.type === 'segments') {
+          drawLaneRow(row, layout.left, plotW, true);
+        } else {
+          drawLaneRow(row, layout.left, plotW, false);
+        }
+      }
+    }
+
+    function drawChannelHeader(row, width) {
+      ctx.fillStyle = row.channel === 'verbal' ? 'rgba(78,161,255,0.10)' : 'rgba(246,180,75,0.11)';
+      ctx.fillRect(0, row.y, width, row.h);
+      ctx.fillStyle = row.channel === 'verbal' ? '#89c2ff' : '#ffd08a';
+      ctx.font = '600 13px ui-sans-serif, system-ui';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(row.channel, 16, row.y + row.h / 2);
+    }
+
+    function drawLaneRow(row, left, plotW, isSegment) {
+      ctx.fillStyle = isSegment ? '#121820' : '#111614';
+      ctx.fillRect(0, row.y, left + plotW + 18, row.h);
+      ctx.fillStyle = '#8e99a6';
+      ctx.font = '12px ui-sans-serif, system-ui';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(isSegment ? 'segments' : 'events', 16, row.y + 14);
+
+      row.lanes.forEach((lane, laneIndex) => {
+        const barY = row.y + 6 + laneIndex * 24;
+        lane.items.forEach(item => {
+          if (isSegment) drawSegment(item, row.channel, left, plotW, barY);
+          else drawEvent(item, row.channel, left, plotW, barY);
+        });
+      });
+      ctx.strokeStyle = '#242b35';
+      ctx.beginPath();
+      ctx.moveTo(0, row.y + row.h + 0.5);
+      ctx.lineTo(left + plotW + 18, row.y + row.h + 0.5);
+      ctx.stroke();
+    }
+
+    function drawSegment(segment, channel, left, plotW, y) {
+      const x1 = timeToX(segment.t_b, left, plotW);
+      const x2 = timeToX(segment.t_e, left, plotW);
+      const x = Math.max(left, x1);
+      const w = Math.max(2, Math.min(left + plotW, x2) - x);
+      const selected = state.selected && state.selected.kind === 'segment' && state.selected.data.uid === segment.uid;
+      const active = state.playhead >= segment.t_b && state.playhead <= segment.t_e;
+      const base = channel === 'verbal' ? '78,161,255' : '246,180,75';
+      roundRect(x, y, w, 18, 4, `rgba(${base},${selected ? 0.85 : 0.48})`, selected || active ? '#ffffff' : `rgba(${base},0.95)`);
+      ctx.fillStyle = '#f6f8fb';
+      ctx.font = '11px ui-sans-serif, system-ui';
+      ctx.textBaseline = 'middle';
+      clipText(`${segment.segment} (${segment.event_count})`, x + 5, y + 9, Math.max(0, w - 8));
+      addHitbox(x, y, w, 18, { kind: 'segment', data: segment, start: segment.t_b, end: segment.t_e });
+    }
+
+    function drawEvent(event, channel, left, plotW, y) {
+      const x1 = timeToX(event.start, left, plotW);
+      const x2 = timeToX(event.end, left, plotW);
+      const x = Math.max(left, x1);
+      const w = Math.max(2, Math.min(left + plotW, x2) - x);
+      const selected = state.selected && state.selected.kind === 'event' && state.selected.data.uid === event.uid;
+      const active = state.playhead >= event.start && state.playhead <= event.end;
+
+      let color = '72,214,160';
+      if (event.visible_loss_ratio >= 0.30) color = '240,93,94';
+      else if (event.visible_loss_ratio >= 0.10) color = '231,193,79';
+
+      roundRect(x, y, w, 18, 4, `rgba(${color},${selected ? 0.70 : 0.34})`, selected || active ? '#ffffff' : `rgba(${color},0.80)`);
+
+      const ox1 = timeToX(Math.max(event.start, event.segment_t_b), left, plotW);
+      const ox2 = timeToX(Math.min(event.end, event.segment_t_e), left, plotW);
+      const ox = Math.max(left, ox1);
+      const ow = Math.max(0, Math.min(left + plotW, ox2) - ox);
+      if (ow > 0) {
+        roundRect(ox, y + 3, ow, 12, 3, channel === 'verbal' ? 'rgba(78,161,255,0.78)' : 'rgba(246,180,75,0.80)', 'transparent');
+      }
+
+      drawLostRegion(event.start, Math.min(event.end, event.segment_t_b), left, plotW, y);
+      drawLostRegion(Math.max(event.start, event.segment_t_e), event.end, left, plotW, y);
+
+      ctx.fillStyle = '#f3f7f8';
+      ctx.font = '11px ui-sans-serif, system-ui';
+      ctx.textBaseline = 'middle';
+      clipText(`${event.label || event.raw_id} ${Math.round(event.visible_ratio * 100)}%`, x + 5, y + 9, Math.max(0, w - 8));
+      addHitbox(x, y, w, 18, { kind: 'event', data: event, start: event.start, end: event.end });
+    }
+
+    function drawLostRegion(start, end, left, plotW, y) {
+      if (end <= start) return;
+      const x1 = timeToX(start, left, plotW);
+      const x2 = timeToX(end, left, plotW);
+      const x = Math.max(left, x1);
+      const w = Math.max(0, Math.min(left + plotW, x2) - x);
+      if (w <= 0) return;
+      ctx.fillStyle = 'rgba(240,93,94,0.58)';
+      ctx.fillRect(x, y + 2, w, 14);
+    }
+
+    function drawPlayhead(left, width, height) {
+      const plotW = width - left - 18;
+      const x = timeToX(state.playhead, left, plotW);
+      if (x < left || x > width - 18) return;
+      ctx.strokeStyle = '#f7f7f0';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, height);
+      ctx.stroke();
+      ctx.lineWidth = 1;
+    }
+
+    function addHitbox(x, y, w, h, item) {
+      if (w <= 0 || h <= 0) return;
+      state.hitboxes.push({ x, y, w, h, item });
+    }
+
+    function selectItem(item) {
+      state.selected = item;
+      renderSubtitles();
+      draw();
+    }
+
+    function onWheel(event) {
+      event.preventDefault();
+      const rect = els.canvas.getBoundingClientRect();
+      const mouseX = event.clientX - rect.left;
+      const before = xToTime(mouseX);
+      if (event.ctrlKey || event.altKey) {
+        const factor = event.deltaY > 0 ? 1.14 : 0.88;
+        state.windowSec = clamp(state.windowSec * factor, 4, Math.max(4, videoData().duration || 4));
+        els.windowRange.value = String(Math.round(state.windowSec));
+        els.windowLabel.textContent = `${Math.round(state.windowSec)}s`;
+        const after = xToTime(mouseX);
+        state.viewStart += before - after;
+      } else {
+        state.viewStart += (event.deltaY + event.deltaX) * state.windowSec / 900;
+      }
+      clampView();
+      draw();
+    }
+
+    function onMouseDown(event) {
+      state.dragging = true;
+      state.dragMoved = false;
+      state.dragX = event.clientX;
+      state.dragStartView = state.viewStart;
+      els.canvas.classList.add('dragging');
+    }
+
+    function onMouseMove(event) {
+      if (!state.dragging) return;
+      const dx = event.clientX - state.dragX;
+      if (Math.abs(dx) > 3) state.dragMoved = true;
+      const plotW = Math.max(1, els.canvas.clientWidth - 150);
+      state.viewStart = state.dragStartView - dx * state.windowSec / plotW;
+      clampView();
+      draw();
+    }
+
+    function onMouseUp(event) {
+      if (!state.dragging) return;
+      state.dragging = false;
+      els.canvas.classList.remove('dragging');
+      if (!state.dragMoved) {
+        const rect = els.canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const hit = [...state.hitboxes].reverse().find(box => x >= box.x && x <= box.x + box.w && y >= box.y && y <= box.y + box.h);
+        if (hit) {
+          selectItem(hit.item);
+          setPlayhead(hit.item.start, true);
+        } else {
+          setPlayhead(xToTime(x), true);
+        }
+      }
+    }
+
+    function timeToX(time, left, plotW) {
+      return left + (time - state.viewStart) * plotW / state.windowSec;
+    }
+
+    function xToTime(x) {
+      const left = 132;
+      const plotW = Math.max(1, els.canvas.clientWidth - left - 18);
+      return state.viewStart + (x - left) * state.windowSec / plotW;
+    }
+
+    function clampView() {
+      const video = videoData();
+      const maxStart = Math.max(0, video.duration - state.windowSec);
+      state.viewStart = clamp(state.viewStart, 0, maxStart);
+    }
+
+    function niceTick(raw) {
+      const ticks = [0.1, 0.2, 0.5, 1, 2, 5, 10, 15, 30, 60, 120, 300, 600];
+      return ticks.find(tick => tick >= raw) || 1200;
+    }
+
+    function roundRect(x, y, w, h, r, fill, stroke) {
+      const rr = Math.min(r, w / 2, h / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + rr, y);
+      ctx.lineTo(x + w - rr, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + rr);
+      ctx.lineTo(x + w, y + h - rr);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - rr, y + h);
+      ctx.lineTo(x + rr, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - rr);
+      ctx.lineTo(x, y + rr);
+      ctx.quadraticCurveTo(x, y, x + rr, y);
+      if (fill && fill !== 'transparent') {
+        ctx.fillStyle = fill;
+        ctx.fill();
+      }
+      if (stroke && stroke !== 'transparent') {
+        ctx.strokeStyle = stroke;
+        ctx.stroke();
+      }
+    }
+
+    function clipText(text, x, y, maxWidth) {
+      if (maxWidth < 16) return;
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(x, y - 9, maxWidth, 18);
+      ctx.clip();
+      ctx.fillText(text, x, y);
+      ctx.restore();
+    }
+
+    function fmt(value) {
+      return Number(value || 0).toFixed(3);
+    }
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;');
+    }
+  </script>
+</body>
+</html>

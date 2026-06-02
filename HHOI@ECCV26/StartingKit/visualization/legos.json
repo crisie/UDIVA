@@ -1,0 +1,78 @@
+{
+    "verbal": {
+        "legos": {
+            "s_0001": {
+                "t_b": 0.0,
+                "t_e": 2.0,
+                "events": [
+                    {
+                        "subject": "participant_a",
+                        "utterance_type": "suggest",
+                        "target": "model",
+                        "modifier": "none",
+                        "score": 1.0
+                    }
+                ]
+            },
+            "s_0002": {
+                "t_b": 3.191,
+                "t_e": 5.191,
+                "events": [
+                    {
+                        "subject": "participant_b",
+                        "utterance_type": "resolve_conflict",
+                        "target": "leaflet",
+                        "modifier": "none",
+                        "score": 1.0
+                    },
+                    {
+                        "subject": "participant_a",
+                        "utterance_type": "agree",
+                        "target": "brick_3001",
+                        "modifier": "none",
+                        "score": 1.0
+                    }
+                ]
+            }
+        }
+    },
+    "nonverbal": {
+        "legos": {
+            "s_0001": {
+                "t_b": 0.0,
+                "t_e": 2.0,
+                "events": [
+                    {
+                        "subject": "participant_a",
+                        "highlevel_action": "pay_attention",
+                        "lowlevel_action": "look_at",
+                        "target": "leaflet",
+                        "modifier": "none",
+                        "score": 1.0
+                    },
+                    {
+                        "subject": "participant_b",
+                        "highlevel_action": "open",
+                        "lowlevel_action": "flip",
+                        "target": "leaflet",
+                        "modifier": "none",
+                        "score": 1.0
+                    },
+                    {
+                        "subject": "participant_b",
+                        "highlevel_action": "inspect_check",
+                        "lowlevel_action": "look_at",
+                        "target": "leaflet",
+                        "modifier": "none",
+                        "score": 1.0
+                    }
+                ]
+            },
+            "s_0002": {
+                "t_b": 3.191,
+                "t_e": 5.191,
+                "events": []
+            }
+        }
+    }
+}
