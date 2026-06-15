@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from .pipeline import run_config
+from .pipeline import available_anticipation_selection_strategies, run_config
 from .strategies import available_segmentation_strategies, available_selection_strategies
 
 
@@ -33,6 +33,9 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  - {name}")
         print("Selection strategies:")
         for name in available_selection_strategies():
+            print(f"  - {name}")
+        print("Anticipation selection strategies:")
+        for name in available_anticipation_selection_strategies():
             print(f"  - {name}")
         return 0
 

@@ -11,6 +11,11 @@ DEFAULT_FIELDS = {
     "nonverbal": ["subject", "highlevel_action", "lowlevel_action", "target", "modifier"],
 }
 
+ANTICIPATION_FIELDS = {
+    "verbal": ["utterance_type", "target"],
+    "nonverbal": ["highlevel_action", "lowlevel_action", "target"],
+}
+
 FIELD_ALIASES = {
     "highlevel_action": ("high_level_action", "highlevel_action"),
     "lowlevel_action": ("low_level_action", "lowlevel_action"),
@@ -44,6 +49,11 @@ def event_payload(event: Event, fields: list[str], output_spec: dict[str, Any]) 
             score_default,
         )
     return payload
+
+
+def anticipation_event_payload(event: Event, output_spec: dict[str, Any]) -> list[Any]:
+    fields = ANTICIPATION_FIELDS.get(event.channel, [])
+    return [field_value(event, field, output_spec) for field in fields]
 
 
 def field_value(event: Event, field: str, output_spec: dict[str, Any]) -> Any:

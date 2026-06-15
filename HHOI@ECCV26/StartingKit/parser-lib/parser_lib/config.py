@@ -32,6 +32,13 @@ class ParserConfig:
         return value if isinstance(value, dict) else {}
 
     @property
+    def task(self) -> str:
+        value = self.data.get("task", "recognition")
+        if isinstance(value, dict):
+            value = value.get("name", "recognition")
+        return str(value or "recognition").strip().lower().replace("-", "_")
+
+    @property
     def outputs(self) -> dict[str, dict[str, Any]]:
         value = self.data.get("outputs", {})
         if not isinstance(value, dict) or not value:
