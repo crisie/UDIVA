@@ -4,6 +4,9 @@ Events are submitted as ordered JSON lists:
     verbal:     [utterance_type, target]
     non-verbal: [highlevel_action, lowlevel_action, target]
 
+Participant predictions contain exactly one target string. Hidden reference events may
+contain either one target string or a list of acceptable target strings.
+
 The best hypothesis is selected independently per participant
 and per subtask.
 """
@@ -34,6 +37,20 @@ def event_type(event):
     raise ValueError(f"Invalid event length {len(event)}: expected 2 or 3.")
 
 
+def attribute_matches(gt_attr, pred_attr, attr_name, wildcards):
+    """Return whether a prediction matches one ground-truth attribute.
+
+    Targets may be represented in the hidden reference as a list of acceptable
+    strings. Participant predictions remain single strings. A ground-truth
+    wildcard, including one contained in an acceptable-target list, matches any
+    prediction.
+    """
+    wildcard_values = wildcards.get(attr_name, [])
+    if attr_name == "target" and isinstance(gt_attr, list):
+        return any(value in wildcard_values for value in gt_attr) or pred_attr in gt_attr
+    return gt_attr in wildcard_values or gt_attr == pred_attr
+
+
 def substitution_cost(gt_event, pred_event):
     """Compute structured substitution cost in [0, 1] for a pair of events."""
     gt_type = event_type(gt_event)
@@ -45,8 +62,9 @@ def substitution_cost(gt_event, pred_event):
     return sum(
         weight for weight, gt_attr, pred_attr, attr_name
         in zip(weights, gt_event, pred_event, attribute_names)
-        if gt_attr != pred_attr and gt_attr not in wildcards.get(attr_name, [])
+        if not attribute_matches(gt_attr, pred_attr, attr_name, wildcards)
     )
+
 
 def events_match_with_wildcards(gt_event, pred_event):
     """Return True if events match after discounting GT wildcard attributes."""
@@ -54,6 +72,7 @@ def events_match_with_wildcards(gt_event, pred_event):
         event_type(gt_event) == event_type(pred_event)
         and substitution_cost(gt_event, pred_event) == 0.0
     )
+
 
 def structured_damerau_levenshtein(gt_sequence, pred_sequence):
     """Compute SDL with exact adjacent transposition as specified in the track."""

@@ -18,14 +18,42 @@ def load_json(path):
         sys.exit(f"[ERROR] Could not parse {path}: {error}")
 
 
-def _validate_event(event, context):
+def _validate_event_shape(event, context):
     if not isinstance(event, list) or len(event) not in (2, 3):
         sys.exit(
             f"[ERROR] Event in {context} must be a list with 2 elements "
             "(verbal) or 3 elements (non-verbal)."
         )
+
+
+def _validate_reference_event(event, context):
+    """Validate a hidden reference event.
+
+    Every non-target attribute must be a string. The final target attribute may
+    be either one string or a non-empty list of strings representing alternative
+    acceptable targets.
+    """
+    _validate_event_shape(event, context)
+    if not all(isinstance(attribute, str) for attribute in event[:-1]):
+        sys.exit(f"[ERROR] Every non-target event attribute in {context} must be a string.")
+
+    target = event[-1]
+    valid_target = isinstance(target, str) or (
+        isinstance(target, list)
+        and len(target) > 0
+        and all(isinstance(value, str) for value in target)
+    )
+    if not valid_target:
+        sys.exit(
+            f"[ERROR] Target in {context} must be a string or a non-empty list of strings."
+        )
+
+
+def _validate_submission_event(event, context):
+    """Validate a participant event; predictions must contain one target string."""
+    _validate_event_shape(event, context)
     if not all(isinstance(attribute, str) for attribute in event):
-        sys.exit(f"[ERROR] Every event attribute in {context} must be a string.")
+        sys.exit(f"[ERROR] Every submitted event attribute in {context} must be a string.")
 
 
 def _validate_segment_metadata(segment, context):
@@ -54,7 +82,7 @@ def validate_reference(reference):
                 if not isinstance(record, dict) or not isinstance(record.get("events"), list):
                     sys.exit(f"[ERROR] Missing event list for {participant} in {context}.")
                 for event in record["events"]:
-                    _validate_event(event, f"{context}, {participant}")
+                    _validate_reference_event(event, f"{context}, {participant}")
 
 
 def validate_submission(submission):
@@ -91,7 +119,7 @@ def validate_submission(submission):
                     if not isinstance(hypothesis, dict) or not isinstance(hypothesis.get("events"), list):
                         sys.exit(f"[ERROR] Invalid hypothesis {index} for {participant} in {context}.")
                     for event in hypothesis["events"]:
-                        _validate_event(event, f"{context}, {participant}, hypothesis {index}")
+                        _validate_submission_event(event, f"{context}, {participant}, hypothesis {index}")
 
 
 def _empty_prediction_segment(gt_segment):
