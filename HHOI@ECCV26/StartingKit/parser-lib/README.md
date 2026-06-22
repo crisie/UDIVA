@@ -2,33 +2,42 @@
 
 Standalone parser builder for UDIVA spotting JSON files.
 
-You configure the parser with two kinds of strategies:
+The parser is configured through TOML files. Two strategy families are used:
 
-- **Segmentation strategies** decide how each video is split into time windows.
-- **Selection strategies** decide which events are assigned to each window.
+- **Segmentation strategies** determine the temporal windows.
+- **Selection strategies** determine which annotations are assigned to each window.
 
-The output shape is controlled by a TOML config file.
+The top-level `task` field selects the output schema:
+
+- `task = "recognition"` produces the channel-based format used by Tracks 1 and 2.
+- `task = "anticipation"` produces the participant-based format used by Tracks 3 and 4.
 
 ## Quick Start
 
-From the repo root:
+Run commands from the repo root.
+
+Recognition:
 
 ```bash
 PYTHONPATH=parser-lib python3 -m parser_lib \
-  --config parser-lib/configs/random_delta_181182_001080.toml
+  --config parser-lib/configs/uniform_181182_001080_recognition.toml
 ```
 
-That writes:
+Uniform anticipation:
 
-- `parser-lib/out/random_delta_181182_001080/reference.json`
-- `parser-lib/out/random_delta_181182_001080/example.json`
-- `parser-lib/out/random_delta_181182_001080/template.json`
+```bash
+PYTHONPATH=parser-lib python3 -m parser_lib \
+  --config parser-lib/configs/uniform_181182_001080_anticipation.toml
+```
 
-Set the top-level `task` field in the TOML to choose the parser:
+Random-delta anticipation:
 
-- `task = "recognition"` keeps the channel-based recognition output.
-- `task = "anticipation"` emits future events grouped by participant for the
-  anticipation tracks.
+```bash
+PYTHONPATH=parser-lib python3 -m parser_lib \
+  --config parser-lib/configs/random_delta_181182_001080_anticipation.toml
+```
+
+Each config generates `reference.json`, `example.json`, and `template.json` in its configured output directory.
 
 ## Strategies
 
@@ -52,12 +61,14 @@ Selection strategies choose how events are assigned to windows:
 
 ## Config Shape
 
-See `configs/random_delta_181182_001080.toml` for a runnable recognition example.
+See `configs/random_delta_181182_001080.toml` for a runnable example.
 Each output can override the default segmentation and selection strategy, which
 makes it easy to produce `reference`, `example`, `template`, or other variants
 from the same input files.
 
-Recognition outputs use the same outer JSON structure:
+## Recognition outputs
+
+Recognition outputs use separate `verbal` and `nonverbal` roots:
 
 ```json
 {
@@ -80,6 +91,16 @@ the event payload inside `events`: `reference` contains the configured
 annotation fields, while `example` can also include a `score` when
 `include_score = true`. That `score` is a confidence score that participants are
 expected to provide in their submission output.
+
+The output fields and list formatting are controlled independently for every output block (i.e., reference, example, template). Existing recognition configs use:
+
+```toml
+list_mode = "join"
+list_separator = ","
+list_sort = "asc"
+```
+
+This converts a list-valued annotation into one joined string and remains unchanged across outputs.
 
 For anticipation configs, `[defaults.segmentation]` still creates the observed
 context windows. `[defaults.selection]` then controls the future target:
@@ -111,19 +132,18 @@ previous prediction; positive values leave a gap. Please note that, in the
 context of the challenge, the observation window would be considered from the 
 start of the video until the start of the prediction window.
 
-The reference output uses `events`, while example and template outputs can use
-ranked `hypotheses`:
+The reference format contains one ordered event sequence for each participant:
 
 ```json
 {
   "anticipation": {
     "001080": {
       "s_0001": {
-        "t_b": 2.0,
-        "t_e": 4.0,
+        "t_b": 4.0,
+        "t_e": 6.0,
         "participants": {
           "participant_a": {
-            "events": [["suggest", "brick_3001"]]
+            "events": [["request", "brick_3001"]]
           },
           "participant_b": {
             "events": []
@@ -134,3 +154,47 @@ ranked `hypotheses`:
   }
 }
 ```
+
+Example and template outputs use (and must include) ranked hypotheses:
+
+```json
+{
+  "participant_a": {
+    "hypotheses": [
+      {"events": []}
+    ]
+  }
+}
+```
+### Multiple acceptable targets
+
+Participants always predict one target string per event. Hidden reference annotations may contain multiple acceptable targets:
+
+```json
+["request", ["brick_3001", "partial_model"]]
+```
+
+The anticipation scorer considers either target correct. Configure output-specific list behavior as follows:
+
+```toml
+[outputs.reference]
+list_mode = "list"
+list_sort = "asc"
+strip_target_ids = true
+
+[outputs.example]
+list_mode = "first"
+strip_target_ids = true
+```
+
+The available list modes are:
+
+- `first`: retain the first non-empty value;
+- `join`: concatenate values into one string;
+- `list`: preserve values as a JSON list.
+
+When  `task = "anticipation"`, `list_mode = "list"` must be used for targets.
+
+## Output alignment
+
+`reference.json`, `example.json`, and `template.json` generated by one config must share the same video IDs, segment IDs, and `t_b`/`t_e` values. The CodaBench anticipation scorer requires prediction boundaries to match the reference exactly.

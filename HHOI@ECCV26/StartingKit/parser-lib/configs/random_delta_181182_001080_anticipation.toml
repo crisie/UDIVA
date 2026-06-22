@@ -1,38 +1,31 @@
-# Random-delta anticipation example over data/181182.json and data/001080.json.
+# Random-delta anticipation example over data/spotting/181182.json and 001080.json.
 #
-# Run from the repo root:
-# PYTHONPATH=parser-lib python3 -m parser_lib --config parser-lib/configs/random_delta_181182_001080_anticipation.toml
+# Run from UDIVA-HHOI/StartingKit:
+# PYTHONPATH=parser-lib python3 -m parser_lib \
+#   --config parser-lib/configs/random_delta_181182_001080_anticipation.toml
 
 task = "anticipation"
 
 [input]
-glob = "../data/*.json"
+glob = "../data/spotting/*.json"
 video_ids = ["001080", "181182"]
 
 [defaults.segmentation]
+# Observed context windows. Their ends define the starts of the target windows.
+# With start_sec = 2.0 and window_sec = 2.0, the first target starts at 4.0 s.
 name = "random_delta_window"
 window_sec = 2.0
-# d1/d2 can provide random compound-segment offsets when segment_offset_sec is omitted.
-d1_sec = 0.0
-d2_sec = 10.0
+d1_sec = 0.5
+d2_sec = 3.5
 seed = 2026
-start_sec = 0.0
-include_partial = true
+start_sec = 2.0
+include_partial = false
 
 [defaults.selection]
-# For anticipation, segmentation builds the observed context windows.
-# The prediction window starts at context end + prediction_offset_sec.
-# Use "prediction_window" for all events in a fixed future interval, or
-# "next_events" for the next n events after the offset.
 name = "prediction_window"
 prediction_start = "segment_end"
 prediction_offset_sec = 0.0
 prediction_window_sec = 2.0
-# After each prediction target, place the next observation window at
-# prediction.t_e + segment_offset_sec. Zero means touching, negative overlaps,
-# positive leaves a gap.
-segment_offset_sec = 0.0
-# Use "verbal", "nonverbal", or "all".
 event_type = "all"
 
 [outputs.reference]
@@ -40,12 +33,19 @@ path = "../out/random_delta_181182_001080_anticipation/reference.json"
 include_events = true
 include_hypotheses = false
 time_decimals = 3
+# Preserve all acceptable targets in the hidden ground truth.
+list_mode = "list"
+list_sort = "asc"
+strip_target_ids = true
 
 [outputs.example]
 path = "../out/random_delta_181182_001080_anticipation/example.json"
 include_events = true
 include_hypotheses = true
 time_decimals = 3
+# Participant predictions contain one target per event.
+list_mode = "first"
+strip_target_ids = true
 
 [outputs.template]
 path = "../out/random_delta_181182_001080_anticipation/template.json"

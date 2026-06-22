@@ -1,0 +1,51 @@
+# Uniform anticipation example over data/spotting/181182.json and 001080.json.
+#
+# Run from UDIVA-HHOI/StartingKit:
+# PYTHONPATH=parser-lib python3 -m parser_lib \
+#   --config parser-lib/configs/uniform_181182_001080_anticipation.toml
+
+task = "anticipation"
+
+[input]
+glob = "../data/spotting/*.json"
+video_ids = ["001080", "181182"]
+
+[defaults.segmentation]
+# These are observed context windows. With prediction_start = "segment_end",
+# the first target window starts at 4.0 s.
+name = "uniform"
+window_sec = 2.0
+start_sec = 2.0
+include_partial = false
+
+[defaults.selection]
+name = "prediction_window"
+prediction_start = "segment_end"
+prediction_offset_sec = 0.0
+prediction_window_sec = 2.0
+event_type = "all"
+
+[outputs.reference]
+path = "../out/uniform_181182_001080_anticipation/reference.json"
+include_events = true
+include_hypotheses = false
+time_decimals = 3
+# Preserve every acceptable target in the hidden ground truth.
+list_mode = "list"
+list_sort = "asc"
+strip_target_ids = true
+
+[outputs.example]
+path = "../out/uniform_181182_001080_anticipation/example.json"
+include_events = true
+include_hypotheses = true
+time_decimals = 3
+# Participant predictions contain one target per event.
+list_mode = "first"
+strip_target_ids = true
+
+[outputs.template]
+path = "../out/uniform_181182_001080_anticipation/template.json"
+include_events = false
+include_hypotheses = true
+time_decimals = 3
