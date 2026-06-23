@@ -1,0 +1,68 @@
+# Random-delta recognition example over input/181182.json and input/001080.json.
+#
+# Run from the repo root:
+# PYTHONPATH=parser-lib python3 -m parser_lib --config parser-lib/configs/random_uniform_181182_001080.toml
+
+task = "recognition"
+
+[input]
+glob = "../data/spotting/*.json"
+video_ids = ["001080", "181182"]
+
+[defaults.segmentation]
+name = "uniform"
+window_sec = 2.0
+# d1/d2 are random gaps after each 2-second window. 0 means uniform; negatives overlap.
+d1_sec = 0.0
+d2_sec = 0.0
+seed = 2026
+start_sec = 0.0
+# Keep the final segment even if less than window_sec remains; it will be clipped to the timeline end.
+include_partial = true
+
+[defaults.selection]
+name = "every_overlap"
+
+[outputs.reference]
+path = "../out/uniform_181182_001080/reference.json"
+# Include events
+include_events = true
+# Emit a score field on each event when true; false leaves scores out of the output payload.
+include_score = false
+# Decimal places in the JSON output
+time_decimals = 3
+# Join list-like attributes, sorting them (list_sort), and concatenating them in a joint string
+# with elements separated by a separator
+list_mode = "join"
+list_separator = ","    # Affecting the list_mode = "join"
+list_sort="asc"         # Also affecting the list_mode = "join"
+
+[outputs.reference.fields]
+# Event keys to emit
+verbal = ["subject", "utterance_type", "target", "modifier"]
+nonverbal = ["subject", "highlevel_action", "lowlevel_action", "target", "modifier"]
+
+[outputs.example]
+path = "../out/uniform_181182_001080/example.json"
+include_events = true
+include_score = true
+score_default = 1.0
+score_decimals = 2
+time_decimals = 3
+# Join list-like attributes, sorting them (list_sort), and concatenating them in a joint string
+# with elements separated by a separator
+list_mode = "join"
+list_separator = ","    # Affecting the list_mode = "join"
+list_sort="asc"         # Also affecting the list_mode = "join"
+
+[outputs.example.fields]
+verbal = ["subject", "utterance_type", "target", "modifier"]
+nonverbal = ["subject", "highlevel_action", "lowlevel_action", "target", "modifier"]
+
+[outputs.template]
+path = "../out/uniform_181182_001080/template.json"
+include_events = false
+# Emit a score field on each event when true; false leaves scores out of the output payload.
+include_score = false
+# Decimal places in the JSON output
+time_decimals = 3
