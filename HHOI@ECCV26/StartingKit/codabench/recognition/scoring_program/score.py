@@ -93,20 +93,26 @@ def main():
     # -----------------------------------------------------------------------
     # VERBAL
     # -----------------------------------------------------------------------
-    if "verbal" in ref_data:
-        preds_v, gts_v = collect_segments_aligned(sub_data, ref_data, "verbal")
+    verbal_metrics = [
+        ("utterance_type", constants.UTTERANCE_TYPES, ["subject"], constants.WILDCARDS["utterance_type"], "mAP_utterance-type"),
+        ("utterance_type", constants.UTTERANCE_TYPES, ["subject", "target", "modifier"], constants.WILDCARDS["utterance_type"], "mAP_verbal"),
+    ]
 
-        mAP_v = metrics.evaluate_mAP(
-            preds_v,
-            gts_v,
-            class_key="utterance_type",
-            classes=constants.UTTERANCE_TYPES,
-            attribute_keys=["subject", "target", "modifier"],
-            class_wildcards=constants.WILDCARDS["utterance_type"],
-            attribute_wildcards=constants.WILDCARDS
-        )
+    for vm in verbal_metrics:
+        if "verbal" in ref_data:
+            preds_v, gts_v = collect_segments_aligned(sub_data, ref_data, "verbal")
 
-        scores["mAP_verbal"] = round(mAP_v, 4)
+            mAP_v = metrics.evaluate_mAP(
+                preds_v,
+                gts_v,
+                class_key=vm[0],
+                classes=vm[1],
+                attribute_keys=vm[2],
+                class_wildcards=vm[3],
+                attribute_wildcards=constants.WILDCARDS
+            )
+
+            scores[vm[4]] = round(mAP_v, 4)
 
     # -----------------------------------------------------------------------
     # NON-VERBAL
@@ -114,22 +120,29 @@ def main():
     if "nonverbal" in ref_data:
         preds_n, gts_n = collect_segments_aligned(sub_data, ref_data, "nonverbal")
 
-        mAP_n = metrics.evaluate_mAP(
-            preds_n,
-            gts_n,
-            class_key="highlevel_action",
-            classes=constants.HIGHLEVEL_ACTIONS,
-            attribute_keys=["subject", "lowlevel_action", "target", "modifier"],
-            class_wildcards=constants.WILDCARDS["highlevel_action"],
-            attribute_wildcards=constants.WILDCARDS
-        )
+        nonverbal_metrics = [
+            ("highlevel_action", constants.HIGHLEVEL_ACTIONS, ["subject"], constants.WILDCARDS["highlevel_action"], "mAP_highlevel-action"),
+            ("lowlevel_action", constants.LOWLEVEL_ACTIONS, ["subject"], constants.WILDCARDS["lowlevel_action"], "mAP_lowlevel-action"),
+            ("highlevel_action", constants.HIGHLEVEL_ACTIONS, ["subject", "lowlevel_action", "target", "modifier"], constants.WILDCARDS["highlevel_action"], "mAP_nonverbal"),
+        ]
 
-        scores["mAP_nonverbal"] = round(mAP_n, 4)
+        for nm in nonverbal_metrics:
+            mAP_n = metrics.evaluate_mAP(
+                preds_n,
+                gts_n,
+                class_key=nm[0],
+                classes=nm[1],
+                attribute_keys=nm[2],
+                class_wildcards=nm[3],
+                attribute_wildcards=constants.WILDCARDS
+            )
+
+            scores[nm[4]] = round(mAP_n, 4)
 
     if not scores:
         sys.exit("[ERROR] No valid categories found in submission.")
 
-    scores["mAP"] = round(sum(scores.values()) / len(scores), 4)
+    scores["mAP"] = round((scores["mAP_verbal"] + scores["mAP_nonverbal"]) / 2, 4)
 
     # -----------------------------------------------------------------------
     # Codabench Output

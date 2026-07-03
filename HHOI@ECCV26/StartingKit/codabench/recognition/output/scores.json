@@ -1,1 +1,1 @@
-{"mAP_verbal": 1.0, "mAP_nonverbal": 1.0, "mAP": 1.0}
+{"mAP_utterance-type": 0.0221, "mAP_verbal": 0.0014, "mAP_highlevel-action": 0.0252, "mAP_lowlevel-action": 0.043, "mAP_nonverbal": 0.0076, "mAP": 0.0045}
